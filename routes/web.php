@@ -10,3 +10,5 @@ Route::get('/student/{name}', function() {
 
 Route::resource('student', 'StudentaddController');
 
+Route::post('getData', 'StudentaddController@getData');
+

@@ -46371,7 +46371,9 @@ var Add = __webpack_require__(61);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      addActive: ''
+      addActive: '',
+      lists: {},
+      errors: {}
     };
   },
   components: {
@@ -46384,6 +46386,15 @@ var Add = __webpack_require__(61);
     close: function close() {
       this.addActive = '';
     }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.post('/getData').then(function (response) {
+      return _this.lists = _this.temp = response.data;
+    }).catch(function (error) {
+      return _this.errors = error.response.data.errors;
+    });
   }
 });
 
@@ -46398,23 +46409,40 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("nav", { staticClass: "panel column is-offset-2 is-8" }, [
-        _c("p", { staticClass: "panel-heading" }, [
-          _vm._v("\n        Vue js Student Enrollment\n        "),
-          _c(
-            "button",
-            {
-              staticClass: "button is-link is-outlined",
-              on: { click: _vm.addNew }
-            },
-            [_vm._v("\n          Add New\n        ")]
-          )
-        ]),
-        _vm._v(" "),
-        _vm._m(0),
-        _vm._v(" "),
-        _vm._m(1)
-      ]),
+      _c(
+        "nav",
+        { staticClass: "panel column is-offset-2 is-8" },
+        [
+          _c("p", { staticClass: "panel-heading" }, [
+            _vm._v("\n        Vue js Student Enrollment\n        "),
+            _c(
+              "button",
+              {
+                staticClass: "button is-link is-outlined",
+                on: { click: _vm.addNew }
+              },
+              [_vm._v("\n          Add New\n        ")]
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _vm._l(_vm.lists, function(item, key) {
+            return _c("a", { key: key, staticClass: "panel-block" }, [
+              _c("span", { staticClass: "column is-9" }, [
+                _vm._v("\n           " + _vm._s(item.name) + "\n       ")
+              ]),
+              _vm._v(" "),
+              _vm._m(1, true),
+              _vm._v(" "),
+              _vm._m(2, true),
+              _vm._v(" "),
+              _vm._m(3, true)
+            ])
+          })
+        ],
+        2
+      ),
       _vm._v(" "),
       _c("Add", {
         attrs: { openModal: _vm.addActive },
@@ -46446,22 +46474,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { staticClass: "panel-block" }, [
-      _c("span", { staticClass: "column is-9" }, [
-        _vm._v("\n            marksheet\n       ")
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "panel-icon column is-1" }, [
-        _c("i", { staticClass: "has-text-danger fa fa-trash" })
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "panel-icon column is-1" }, [
-        _c("i", { staticClass: "has-text-info fa fa-edit" })
-      ]),
-      _vm._v(" "),
-      _c("span", { staticClass: "panel-icon column is-1" }, [
-        _c("i", { staticClass: "has-text-primary fa fa-eye" })
-      ])
+    return _c("span", { staticClass: "panel-icon column is-1" }, [
+      _c("i", { staticClass: "has-text-danger fa fa-trash" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "panel-icon column is-1" }, [
+      _c("i", { staticClass: "has-text-info fa fa-edit" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "panel-icon column is-1" }, [
+      _c("i", { staticClass: "has-text-primary fa fa-eye" })
     ])
   }
 ]

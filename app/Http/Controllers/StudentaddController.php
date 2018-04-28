@@ -18,6 +18,11 @@ class StudentaddController extends Controller
         return view('student');
     }
 
+    public function getData()
+    {
+        return student::orderBy('name', 'DESC')->get();
+    }
+
     /**
      * Show the form for creating a new resource.
      *
