@@ -66,7 +66,7 @@ export default {
         this.$emit('closeRequest');
     },
     saveData: function() {
-        axios.post('/phonebook', this.$data.list).then((response)=> this.closeModal())
+        axios.post('/student', this.$data.list).then((response)=> this.closeModal())
         .catch((error)=> this.errors = error.response.data.errors);
     }
   }

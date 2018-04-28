@@ -15,6 +15,8 @@ let Myfooter =  require('./components/Myfooter.vue');
 let Home     =  require('./components/Home.vue');
 let Addstudent    =  require('./components/Addstudent.vue');
 
+let Add    =  require('./components/Add.vue');
+
 const routes = [
     { path: '/home', component: Home },
     { path: '/addstudent', component: Addstudent }
@@ -30,6 +32,7 @@ const app = new Vue({
     router,
     components: {
         Myheader,
-        Myfooter
+        Myfooter,
+        Add
     }
 });

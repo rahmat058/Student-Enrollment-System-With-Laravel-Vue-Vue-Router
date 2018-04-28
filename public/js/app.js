@@ -13895,6 +13895,8 @@ var Myfooter = __webpack_require__(52);
 var Home = __webpack_require__(55);
 var Addstudent = __webpack_require__(58);
 
+var Add = __webpack_require__(61);
+
 var routes = [{ path: '/home', component: Home }, { path: '/addstudent', component: Addstudent }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
@@ -13907,7 +13909,8 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     router: router,
     components: {
         Myheader: Myheader,
-        Myfooter: Myfooter
+        Myfooter: Myfooter,
+        Add: Add
     }
 });
 
@@ -46700,7 +46703,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     saveData: function saveData() {
       var _this = this;
 
-      axios.post('/phonebook', this.$data.list).then(function (response) {
+      axios.post('/student', this.$data.list).then(function (response) {
         return _this.closeModal();
       }).catch(function (error) {
         return _this.errors = error.response.data.errors;
