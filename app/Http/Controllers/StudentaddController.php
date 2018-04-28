@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Studentadd;
 use Illuminate\Http\Request;
+use App\Http\Requests\StudentaddRequest;
 
 class StudentaddController extends Controller
 {
@@ -33,7 +34,7 @@ class StudentaddController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StudentaddRequest $request)
     {
         $student = new student;
 
