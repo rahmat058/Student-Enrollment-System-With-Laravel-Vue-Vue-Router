@@ -6,13 +6,9 @@
    </a>
 
    <div class="navbar-menu is-active">
-      <a class="navbar-item" href="">
-         Home
-      </a>
+      <router-link to="/home" class="navbar-item">Home</router-link>
 
-      <a class="navbar-item" href="">
-         Add Student
-      </a>
+      <router-link to="/addstudent" class="navbar-item">Add Student</router-link>
    </div>
 
 

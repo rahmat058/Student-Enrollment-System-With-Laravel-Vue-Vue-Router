@@ -12,8 +12,22 @@ Vue.use(VueRouter)
 let Myheader =  require('./components/Myheader.vue');
 let Myfooter =  require('./components/Myfooter.vue');
 
+let Home     =  require('./components/Home.vue');
+let Addstudent    =  require('./components/Addstudent.vue');
+
+const routes = [
+    { path: '/home', component: Home },
+    { path: '/addstudent', component: Addstudent }
+  ]
+
+  const router = new VueRouter({
+    mode: 'history',
+    routes // short for `routes: routes`
+  })
+
 const app = new Vue({
     el: '#app',
+    router,
     components: {
         Myheader,
         Myfooter

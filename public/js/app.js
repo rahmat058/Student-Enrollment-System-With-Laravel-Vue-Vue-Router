@@ -13892,8 +13892,19 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vue_
 var Myheader = __webpack_require__(49);
 var Myfooter = __webpack_require__(52);
 
+var Home = __webpack_require__(55);
+var Addstudent = __webpack_require__(58);
+
+var routes = [{ path: '/home', component: Home }, { path: '/addstudent', component: Addstudent }];
+
+var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
+    mode: 'history',
+    routes: routes // short for `routes: routes`
+});
+
 var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     el: '#app',
+    router: router,
     components: {
         Myheader: Myheader,
         Myfooter: Myfooter
@@ -46047,10 +46058,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -46062,7 +46069,39 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "nav",
+    {
+      staticClass: "navbar",
+      attrs: { role: "navigation", "aria-label": "main navigation" }
+    },
+    [
+      _c("div", { staticClass: "navbar-brand" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "navbar-menu is-active" },
+          [
+            _c(
+              "router-link",
+              { staticClass: "navbar-item", attrs: { to: "/home" } },
+              [_vm._v("Home")]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              { staticClass: "navbar-item", attrs: { to: "/addstudent" } },
+              [_vm._v("Add Student")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _vm._m(1)
+      ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
@@ -46070,48 +46109,31 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "nav",
-      {
-        staticClass: "navbar",
-        attrs: { role: "navigation", "aria-label": "main navigation" }
-      },
+      "a",
+      { staticClass: "navbar-item", attrs: { href: "https://bulma.io" } },
       [
-        _c("div", { staticClass: "navbar-brand" }, [
-          _c(
-            "a",
-            { staticClass: "navbar-item", attrs: { href: "https://bulma.io" } },
-            [
-              _c("img", {
-                attrs: {
-                  src: "https://bulma.io/images/bulma-logo.png",
-                  alt: "",
-                  width: "112",
-                  height: "28"
-                }
-              })
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "navbar-menu is-active" }, [
-            _c("a", { staticClass: "navbar-item", attrs: { href: "" } }, [
-              _vm._v("\n         Home\n      ")
-            ]),
-            _vm._v(" "),
-            _c("a", { staticClass: "navbar-item", attrs: { href: "" } }, [
-              _vm._v("\n         Add Student\n      ")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "navbar-burger" }, [
-            _c("span"),
-            _vm._v(" "),
-            _c("span"),
-            _vm._v(" "),
-            _c("span")
-          ])
-        ])
+        _c("img", {
+          attrs: {
+            src: "https://bulma.io/images/bulma-logo.png",
+            alt: "",
+            width: "112",
+            height: "28"
+          }
+        })
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "navbar-burger" }, [
+      _c("span"),
+      _vm._v(" "),
+      _c("span"),
+      _vm._v(" "),
+      _c("span")
+    ])
   }
 ]
 render._withStripped = true
@@ -46239,6 +46261,312 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-1fdf0584", module.exports)
+  }
+}
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(40)
+/* script */
+var __vue_script__ = __webpack_require__(56)
+/* template */
+var __vue_template__ = __webpack_require__(57)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\Home.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-85ef4954", Component.options)
+  } else {
+    hotAPI.reload("data-v-85ef4954", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 56 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+// let Add      =  require('./Add.vue');
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      addActive: ''
+    };
+  },
+  //   components: {
+  //     Add
+  //   },
+  methods: {
+    addNew: function addNew() {
+      this.addActive = 'is-active';
+    },
+    close: function close() {
+      this.addActive = '';
+    }
+  }
+});
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("Add", { attrs: { openModal: "addActive", closeRequest: "close" } })
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("nav", { staticClass: "panel column is-offset-2 is-8" }, [
+      _c("p", { staticClass: "panel-heading" }, [
+        _vm._v("\n        Vue js Student Enrollment\n        "),
+        _c(
+          "button",
+          {
+            staticClass: "button is-link is-outlined",
+            attrs: { click: "addNew" }
+          },
+          [_vm._v("\n          Add New\n        ")]
+        )
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "panel-block" }, [
+        _c("p", { staticClass: "control has-icons-left" }, [
+          _c("input", {
+            staticClass: "input is-small",
+            attrs: { type: "text", placeholder: "search" }
+          }),
+          _vm._v(" "),
+          _c("span", { staticClass: "icon is-small is-left" }, [
+            _c("i", { staticClass: "fa fa-search" })
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("a", { staticClass: "panel-block" }, [
+        _c("span", { staticClass: "column is-9" }, [
+          _vm._v("\n            marksheet\n       ")
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "panel-icon column is-1" }, [
+          _c("i", { staticClass: "has-text-danger fa fa-trash" })
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "panel-icon column is-1" }, [
+          _c("i", { staticClass: "has-text-info fa fa-edit" })
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "panel-icon column is-1" }, [
+          _c("i", { staticClass: "has-text-primary fa fa-eye" })
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-85ef4954", module.exports)
+  }
+}
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(40)
+/* script */
+var __vue_script__ = __webpack_require__(59)
+/* template */
+var __vue_template__ = __webpack_require__(60)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\Addstudent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0be7bf9e", Component.options)
+  } else {
+    hotAPI.reload("data-v-0be7bf9e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 59 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("body", [
+      _c("section", { staticClass: "section" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("h1", { staticClass: "title" }, [_vm._v("Section")]),
+          _vm._v(" "),
+          _c("h2", { staticClass: "subtitle" }, [
+            _vm._v("\n         A simple container to divide your page into "),
+            _c("strong", [_vm._v("sections")]),
+            _vm._v(", like the one you're currently reading\n       ")
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-0be7bf9e", module.exports)
   }
 }
 
