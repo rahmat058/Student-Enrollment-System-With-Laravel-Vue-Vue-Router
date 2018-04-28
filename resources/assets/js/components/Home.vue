@@ -3,7 +3,7 @@
       <nav class="panel column is-offset-2 is-8">
        <p class="panel-heading">
           Vue js Student Enrollment
-          <button class="button is-link is-outlined" click="addNew">
+          <button class="button is-link is-outlined" @click="addNew">
             Add New
           </button>
        </p>
@@ -36,7 +36,7 @@
 
     </nav>
 
-   <Add openModal='addActive' closeRequest='close'></Add>
+   <Add :openModal='addActive' @closeRequest='close'></Add>
 
   </div>
 </template>
@@ -44,7 +44,7 @@
 
 <script>
 
-// let Add      =  require('./Add.vue');
+let Add      =  require('./Add.vue');
 
 export default {
     data: function() {
@@ -52,9 +52,9 @@ export default {
          addActive: ''
        }
     },
-   //   components: {
-   //     Add
-   //   },
+     components: {
+       Add
+     },
      methods: {
        addNew: function() {
          this.addActive = 'is-active';
