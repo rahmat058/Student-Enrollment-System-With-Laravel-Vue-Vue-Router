@@ -30,14 +30,14 @@
            <i class="has-text-info fa fa-edit"></i>
          </span>
          <span class="panel-icon column is-1">
-           <i class="has-text-primary fa fa-eye"></i>
+           <i class="has-text-primary fa fa-eye" @click="openShow(key)"></i>
          </span>
        </a>
 
     </nav>
 
    <Add :openModal='addActive' @closeRequest='close'></Add>
-
+   <Show :openModal='showActive' @closeRequest='close'></Show>
   </div>
 </template>
 
@@ -45,24 +45,31 @@
 <script>
 
 let Add      =  require('./Add.vue');
+let Show      =  require('./Show.vue');
 
 export default {
     data: function() {
        return {
          addActive: '',
+         showActive: '',
          lists: {},
          errors: {}
        }
     },
      components: {
-       Add
+       Add,
+       Show
      },
      methods: {
        addNew: function() {
          this.addActive = 'is-active';
        },
+       openShow: function(key) {
+          this.$children[1].list = this.lists[key]
+         this.showActive = 'is-active';
+       },
        close: function() {
-         this.addActive = '';
+         this.addActive = this.showActive = '';
        }
      },
      mounted: function() {
